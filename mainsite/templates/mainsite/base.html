@@ -16,7 +16,22 @@
             <div class="page-header">
                 <a href="/"><h1>Calm Shop</h1></a>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
 
+                    {% with total_items=cart|length %}
+                        {% if cart|length > 0 %}
+                            您的購物車:
+                            <a href='{% url "cart:cart_detail" %}''>
+                                {{ total_items }} 個物品,
+                                ${{ cart.get_total_price }}
+                            </a>
+                        {% else %}
+                            您的購物車是空的
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
             {% block content %}
             {% endblock %}
         </div>

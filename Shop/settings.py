@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'bootstrap3',
     'mainsite',
     'cart',
+    'order',
+    'paypal.standard.ipn',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +135,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
+
+PAYPAL_TEST = True
+PAYPAL_RECEIVER_EMAIL = 'sb-vppil3762725@business.example.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #SMTP
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_HOST_USER = ''
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
